@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="col-50">
+      <book-total [total]="total"> </book-total>
+  
+      <book-lists
+        [books]="books$ | async"
+        (select)="onSelect($event)"
+        (delete)="onDelete($event)"
+      >
+      </book-lists>
+    </div>
+  
+    <book-details
+      class="col-50"
+      [book]="currentBook"
+      (save)="onSave($event)"
+      (cancel)="onCancel()"
+    >
+    </book-details>
+  </div>
+  
