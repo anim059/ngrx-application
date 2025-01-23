@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngrx-application:build:production"
+              "buildTarget": "ngrx-application:build:production"
             },
             "development": {
-              "browserTarget": "ngrx-application:build:development"
+              "buildTarget": "ngrx-application:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngrx-application:build"
+            "buildTarget": "ngrx-application:build"
           }
         },
         "test": {
