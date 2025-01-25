@@ -1,45 +1,42 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { BookDetailsComponent } from './book-details/book-details.component';
-import { BookListsComponent } from './book-lists/book-lists.component';
-import { BookTotalComponent } from './book-total/book-total.component';
-import { BookPageComponent } from './book-page/book-page.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
-import { MatCardModule } from '@angular/material/card';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
+import * as bpr from './store/reducer/book-page.reducer';
 
 import {
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer,
-  StoreModule,
+  provideState,
 } from '@ngrx/store';
 
-
-import * as fromBooks from '../reducer/book-page.reducer';
+import { BookFormComponent } from './components/book-form/book-form.component';
+import { BookHeaderComponent } from './components/book-header/book-header.component';
+import { BookListsComponent } from './components/book-lists/book-lists.component';
+import { BookPageComponent } from './components/book-page/book-page.component';
+import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 export const FEATURE_KEY = 'shared-books';
 
-export interface State {
-    books: fromBooks.State;
-  }
-  
-  export const reducers: ActionReducerMap<State> = {
-    books: fromBooks.reducer,
-  };
+export interface BookFeatureState {
+  books: bpr.BookState;
+}
 
-  export const metaReducers: MetaReducer<State>[] = [];
+export const reducers: ActionReducerMap<BookFeatureState> = {
+  books: bpr.Bookreducer,
+};
+
+export const metaReducers: MetaReducer<BookFeatureState>[] = [];
 
 @NgModule({
   declarations: [
-    BookDetailsComponent,
+    BookFormComponent,
+    BookHeaderComponent,
     BookListsComponent,
-    BookTotalComponent,
     BookPageComponent
   ],
   imports: [
@@ -48,25 +45,15 @@ export interface State {
     RouterModule.forChild([
       { path: '', pathMatch: 'full', component: BookPageComponent },
     ]),
-    StoreModule.forFeature(FEATURE_KEY, reducers, { metaReducers }),
     MatCardModule,
     MatInputModule,
     MatButtonModule,
     MatIconModule,
     MatListModule,
   ],
-  
+  providers: [
+    provideState(FEATURE_KEY, reducers, { metaReducers })
+  ]
+
 })
 export class BookPageModule { }
-
-export const selectSharedBooksState = createFeatureSelector<State>(FEATURE_KEY);
-
-export const selectBooksState = createSelector(
-  selectSharedBooksState,
-  (state: State) => state.books
-);
-
-export const selectAllBooks = createSelector(
-  selectBooksState,
-  fromBooks.selectAll
-);

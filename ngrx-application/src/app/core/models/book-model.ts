@@ -1,7 +1,7 @@
-export interface BookModel {
-    id: string;
+export interface IBook {
+    id?: string;
     name: string;
-    earnings: number;
-    description?: string;
+    price: number;
+    description: string;
   }
   

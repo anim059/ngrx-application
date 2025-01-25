@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { BookModel } from 'src/app/core/models/book-model';
+
+import { IBook } from 'src/app/core/models/book-model';
 
 @Component({
   selector: 'book-lists',
@@ -7,8 +8,20 @@ import { BookModel } from 'src/app/core/models/book-model';
   styleUrls: ['./book-lists.component.css']
 })
 export class BookListsComponent {
-  @Input() books: BookModel[] | null = [];
-  @Input() readonly: boolean | null = false;
+
+  @Input() books: IBook[] | null = [];
+
   @Output() select = new EventEmitter();
+
   @Output() delete = new EventEmitter();
+
+  onDelete(event:any, book: IBook) {
+    event.stopPropagation();
+    this.delete.emit(book);
+  }
+
+  onUpdate(book: IBook) {
+    this.select.emit(book);
+  }
+
 }

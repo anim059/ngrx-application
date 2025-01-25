@@ -1,0 +1,11 @@
+<div class="container">
+
+  <book-header [total$]="total$"> </book-header>
+
+  <book-form [book]="currentSelectedBook" (save)="onSave($event)">
+  </book-form>
+
+  <book-lists [books]="books$ | async" (delete)="onDelete($event)" (select)="onSelect($event)">
+  </book-lists>
+
+</div>
