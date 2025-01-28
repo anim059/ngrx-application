@@ -1,1 +1,44 @@
-<router-outlet></router-outlet>
+<div class="h-full w-full relative">
+    <div class="fixed left-0 translate-y-1/2 flex flex-col gap-2 h-full w-fit">
+        <div class="group overflow-hidden cursor-pointer relative h-[40px] w-[40px] hover:min-w-[500px]" [routerLink]="['/books']">
+            <span class="absolute top-0 left-0 justify-center items-center flex bg-black text-white p-2 w-[40px] h-[40px] 
+                transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-full">
+                <mat-icon class="text-white">library_books</mat-icon>
+            </span>
+            <span
+                class="absolute top-0 left-0 bg-black flex items-center justify-center p-2 opacity-0
+            duration-300 transition-all transform -translate-x-full w-fit group-hover:opacity-100 group-hover:translate-x-0">
+                <h3 class="text-white">Book Store with ngrx store</h3>
+            </span>
+        </div>
+
+
+        <div class="group overflow-hidden cursor-pointer relative h-[40px] w-[40px] hover:min-w-[500px]" [routerLink]="['/product/list']">
+            <span class="absolute top-0 left-0 justify-center items-center flex bg-black text-white p-2 w-[40px] h-[40px] 
+                transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-full">
+                <mat-icon class="text-white">add_shopping_cart</mat-icon>
+            </span>
+            <span
+                class="absolute top-0 left-0 bg-black flex items-center justify-center p-2 opacity-0
+            duration-300 transition-all transform -translate-x-full w-fit group-hover:opacity-100 group-hover:translate-x-0">
+                <h3 class="text-white">Shopping cart with ngrx effect and ngrx store</h3>
+            </span>
+        </div>
+
+
+        <div class="group overflow-hidden cursor-pointer relative h-[40px] w-[40px] hover:min-w-[500px]">
+            <span class="absolute top-0 left-0 justify-center items-center flex bg-black text-white p-2 w-[40px] h-[40px] 
+                transition-all duration-300 group-hover:opacity-0 group-hover:translate-x-full">
+                <mat-icon class="text-white">shopping_cart</mat-icon>
+            </span>
+            <span
+                class="absolute top-0 left-0 bg-black flex items-center justify-center p-2 opacity-0
+            duration-300 transition-all transform -translate-x-full w-fit group-hover:opacity-100 group-hover:translate-x-0">
+                <h3 class="text-white">Shopping cart with ngrx signal store</h3>
+            </span>
+        </div>
+
+
+    </div>
+    <router-outlet></router-outlet>
+</div>

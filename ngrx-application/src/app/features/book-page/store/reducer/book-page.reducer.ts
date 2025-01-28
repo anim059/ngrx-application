@@ -2,7 +2,7 @@ import * as booksActionApi from '../action/book-page-api.actions'
 
 import { createReducer, on } from '@ngrx/store';
 
-import { IBook } from 'src/app/core/models/book-model';
+import { IBook } from 'src/app/features/book-page/models/book-model';
 
 export interface BookState {
   collection: IBook[];

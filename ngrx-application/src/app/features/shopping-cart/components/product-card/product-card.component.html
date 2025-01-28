@@ -1,0 +1,30 @@
+<div class="w-full bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    <a href="#">
+        <img class="p-8 rounded-t-lg" [src]="productInfo.images[0] || productInfo.images[1]" alt="productInfo image" />
+    </a>
+    <div class="px-5 pb-5 space-y-2">
+        <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                {{ productInfo.title }}
+            </h5>
+        </a>
+        <h6 class="text-base font-medium tracking-tight text-gray-700 dark:text-white">
+            {{ productInfo.description }}
+        </h6>
+        <div class="flex flex-wrap grow gap-y-2 items-center justify-between">
+            @if (!isPriceEditable) {
+                <span class="text-3xl font-bold text-gray-900 dark:text-white">
+                    ${{ productInfo.price }}
+                    <span (click)="isPriceEditable = true" class="cursor-pointer"><mat-icon>edit</mat-icon></span>
+                </span>
+            }@else {
+                <input type="number" class="border border-white h-[30px] rounded-md p-2" [(ngModel)]="productInfo.price" />
+                <button class="text-xl font-medium text-white cursor-pointer" (click)="updatePrice(productInfo.id, productInfo.price)">Save</button>
+            }
+            <a (click)="addToCart(productInfo)" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none 
+                focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center
+                 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 cursor-pointer">Add
+                to cart</a>
+        </div>
+    </div>
+</div>

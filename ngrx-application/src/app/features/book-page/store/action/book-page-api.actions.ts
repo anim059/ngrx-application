@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 
-import { IBook } from 'src/app/core/models/book-model';
+import { IBook } from 'src/app/features/book-page/models/book-model';
 
 export const booksLoaded = createAction(
   '[Books API] Books Loaded Success'

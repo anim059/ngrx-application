@@ -3,7 +3,7 @@ import * as bpr from '../../store/reducer/book-page.reducer';
 import { BookFeatureState, FEATURE_KEY } from '../../book-page.module';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
-import { IBook } from 'src/app/core/models/book-model';
+import { IBook } from 'src/app/features/book-page/models/book-model';
 
 const calculateBooksGrossEarnings = (books: IBook[]) => {
     return books.reduce((total, book) => {

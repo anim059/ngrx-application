@@ -1,0 +1,4 @@
+<div class="container fixed top-0 flex justify-between items-center p-10 w-full h-20 bg-[#384a64]">
+    <h1 class="text-xl text-white font-semibold">E-comm Store</h1>
+    <a class="text-base text-white font-bold cursor-pointer" [routerLink]="['/product/cart']">Cart Item: {{ (totalCartItemCount$ | async) || 0 }}</a>
+  </div>

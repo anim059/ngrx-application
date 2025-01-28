@@ -1,0 +1,17 @@
+@if(isContentLoaded()){
+<div class="grid grid-cols-3 gap-4">
+    @for (item of product$ | async; track $index) {
+    <div class="grid-cols-1">
+        <product-card [productInput]="item"></product-card>
+    </div>
+    }@empty {
+    <div class="col-span-full h-full w-full flex items-center justify-center">
+        <h1 class="text-3xl font-bold text-black">No products found</h1>
+    </div>
+    }
+</div>
+}@else{
+    <div class="w-full h-full flex items-center justify-center">
+        <span class="loader"></span>
+    </div>
+}

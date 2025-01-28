@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { IBook } from 'src/app/core/models/book-model';
+import { IBook } from 'src/app/features/book-page/models/book-model';
 
 @Component({
   selector: 'book-form',
