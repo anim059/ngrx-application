@@ -1,0 +1,118 @@
+https://ngrx.io/docs
+
+
+Some key Features
+
+1. what is ActionReducerMap 
+ - ActionReducerMap is a type that allows you to define a map of reducers for your application state. 
+   It is typically used when you have a feature module with its own slice of state, and you want to 
+   combine multiple reducers into a single reducer function.
+
+   Key Points:
+    1. Combining Reducers: ActionReducerMap is used to combine multiple reducers into a single reducer function. 
+       Each reducer manages a specific part of the application state.
+
+    2. Type Safety: It provides type safety by ensuring that the shape of the state object matches the reducers you define.
+
+    3. Feature State Management: It is commonly used in feature modules to manage the state of a specific feature. 
+
+
+
+2. what is MetaReducer
+ - A MetaReducer in NgRx (and Redux-inspired state management libraries) is a higher-order function that wraps around a 
+   reducer to add additional behavior or logic before or after the reducer processes an action. It allows you to intercept 
+   actions and state transitions, enabling you to implement cross-cutting concerns like logging, debugging, state 
+   persistence, or other side effects. 
+
+   Key Points: 
+        1. Higher-Order Function: A MetaReducer is a function that takes a reducer as an argument and returns a new reducer.
+
+        2. Intercept Actions and State: It can inspect or modify the action or state before or after the reducer processes it.
+
+        3. Cross-Cutting Concerns: MetaReducers are useful for implementing functionality that applies globally across your 
+        application, such as logging, debugging, or syncing state with local storage.
+
+        4. Composable: You can chain multiple MetaReducers together to apply multiple layers of behavior.
+
+  Example Use Cases:
+        1. Logging: Log every action and the state before and after the reducer processes it.
+
+        2. Debugging: Add debugging tools to track state changes.
+
+        3. State Persistence: Sync parts of the state with local storage or session storage.
+
+        4. Error Handling: Catch errors in reducers and handle them gracefully.
+
+
+
+3. what is provideState
+ - provideState is a function introduced in NgRx 15 as part of the functional configuration API for NgRx. It is a modern, 
+   tree-shakable, and type-safe way to configure and provide state management for features in an Angular application. 
+   It simplifies the process of setting up state management by replacing the older StoreModule.forFeature approach.
+
+   Key Features:
+       1. Functional API: It uses a functional approach instead of the older module-based approach (StoreModule.forFeature).
+
+       2. Tree-Shakable: It is designed to be tree-shakable, meaning unused code can be removed during the build process, 
+          resulting in smaller bundle sizes.
+
+       3. Type-Safe: It provides better type safety compared to the older module-based approach.
+
+       4. Simplified Setup: It reduces boilerplate code and makes it easier to configure state management for feature modules.
+
+
+
+
+4. what is createFeatureSelector
+ - createFeatureSelector is a function that creates a feature selector for a specific feature state. A feature selector is a 
+   memoized function that retrieves a specific slice of the state from the global store. It is typically used in conjunction 
+   with createSelector to create more specific selectors for parts of the feature state.
+
+
+   Key Features:
+       1. Memoization: The selector created by createFeatureSelector is memoized, meaning it caches the result and only recomputes 
+       it if the input state changes.
+
+       2. Type Safety: It provides type safety by ensuring that the selected state matches the expected feature state interface.
+
+       3. Simplifies State Access: It eliminates the need to manually write boilerplate code to access feature states.
+
+
+    Why Use createFeatureSelector?
+       1. Encapsulation: It encapsulates the logic for accessing the feature state, making your code more modular and maintainable.
+
+       2. Reusability: The feature selector can be reused across multiple components or selectors.
+
+       3. Performance: Memoization ensures that the selector only recomputes when the state changes, improving performance.
+
+       4. Type Safety: It ensures that the selected state matches the expected type, reducing runtime errors.
+
+
+
+
+5. what is createSelector
+ - createSelector is a function that:
+   Takes one or more input selectors (or "projector" functions).
+   Combines their results into a single output using a "projection" function.
+   Memoizes the result, meaning it caches the output and only recomputes it if the input values change
+
+
+   How Does createSelector Work?
+       1. Input Selectors: These are functions that extract specific slices of state from the store. They can be created using 
+       createFeatureSelector or other selectors.
+
+       2. Projection Function: This is a function that takes the results of the input selectors and computes a derived value.
+
+       3. Memoization: The selector caches the result of the projection function. If the input values haven't changed, 
+       the cached result is returned instead of recomputing the value.
+
+
+   How createSelector Works Internally
+       1. Input Selectors: When you call createSelector, you pass one or more input selectors. These selectors extract slices of state 
+       from the store.
+
+       2. Projection Function: The last argument to createSelector is the projection function. This function takes the results of 
+       the input selectors and computes a derived value.
+
+       3. Memoization: The selector caches the result of the projection function. If the input values haven't changed, the cached 
+       result is returned instead of recomputing the value.
