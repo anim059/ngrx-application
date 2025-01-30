@@ -30,7 +30,7 @@ export class ProductCardComponent implements OnChanges {
     this.productInfo.images = this.productInfo.images.map((image) => {
       let url = '';
       let indexOfHttps = image.indexOf('https');
-      let indexOfImageExt = image.indexOf('.jpeg' || '.jpg' || '.png');
+      let indexOfImageExt = image.indexOf('.jpeg') || image.indexOf('.jpg') || image.indexOf('.png');
       if (indexOfHttps !== -1 && indexOfImageExt !== -1) {
         url = image.slice(indexOfHttps, indexOfImageExt + 5);
         return url

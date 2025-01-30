@@ -33,6 +33,11 @@ export const routes: Routes = [
       import('./features/shopping-cart/components/cart/cart.component').then((m) => m.CartComponent),
   },
   {
+    path: 'electronics',
+    loadComponent: () =>
+      import('./features/electronic-product-signal-store/components/electronic-product/electronic-product.component').then((m) => m.ElectronicProductComponent),
+  },
+  {
     path: '',
     pathMatch: 'full',
     redirectTo: 'product/list',
