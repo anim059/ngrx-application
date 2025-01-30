@@ -1,27 +1,80 @@
-# NgrxApplication
+# 📚 NgRx Store Book & Cart Management
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+## 🚀 Project Overview
 
-## Development server
+This Angular project demonstrates state management using NgRx Store, NgRx Effects, and NgRx Signal Store to handle a simple book, product management system, and cart functionality. 
+The project interacts with FakeStoreAPI to fetch and manage products in a shopping cart.
+### [Note: Practice and tutorial purpose]
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 🔥 Features
 
-## Code scaffolding
+### ✅ Book Management (Using NgRx Store)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Add a new book to the store
 
-## Build
+List all books available
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Edit/update book details
 
-## Running unit tests
+### 🛒 Cart Management (Using NgRx Store and NgRx Effect)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Fetch products from FakeStoreAPI
 
-## Running end-to-end tests
+Add a product to the cart
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+View cart items
 
-## Further help
+Remove products from the cart
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 🛒 Electronic Product Management (Using NgRx Signal Store)
+
+Fetch Electronic products from FakeStoreAPI
+
+Sort Product
+
+Query Product only with Title.
+
+### 🏗️ Technologies Used
+
+Angular - Frontend framework
+
+NgRx Store - State management
+
+NgRx Effects - Handling side effects (API calls)
+
+NgRx Signal Store - Managing state reactively
+
+FakeStoreAPI - Simulated backend API
+
+Angular HttpClient - API communication
+
+RxJS - Reactive programming
+
+### 🔗 API Endpoints (FakeStoreAPI)
+
+Fetch all products: GET https://fakestoreapi.com/products
+
+Fetch product by ID: GET https://fakestoreapi.com/products/{id}
+
+
+### 📦 Installation & Setup
+
+1️⃣ Clone the repository:
+
+  git clone https://github.com/your-username/ngrx-signal-store-books-cart.git
+
+2️⃣ Navigate into the project directory:
+
+  cd ngrx-signal-store-books-cart
+
+3️⃣ Install dependencies:
+
+  npm install
+
+4️⃣ Run the development server:
+
+  ng serve
+
+5️⃣ Open in browser:
+
+  http://localhost:4200
