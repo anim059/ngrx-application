@@ -3,23 +3,41 @@
 </div>
 
 <div class="w-full flex justify-center items-center gap-6 border-b border-b-black pb-6">
-    <input class="w-[500px] h-[60px] p-2 mt-6 border border-black rounded-lg" type="text" placeholder="Search with title"
-    [formControl]="searchInputField"/>
+    <input class="w-[500px] h-[60px] p-2 mt-6 border border-black rounded-lg" type="text"
+        placeholder="Search with title" [formControl]="searchInputField" />
 </div>
+
+<!-- <div class="w-full flex justify-center items-center gap-6 border-b border-b-black pb-6 m-4">
+    <mat-form-field class="w-full px-6">
+        <mat-label>Label</mat-label>
+        <mat-select [formControl]="selected"  class="w-[200px]" placeholder="Select a value">
+            <mat-option value="" disabled="true">Select a value</mat-option>
+            <mat-option value="valid">Valid option</mat-option>
+            <mat-option value="invalid">Invalid option</mat-option>
+        </mat-select>
+        @if (selected.hasError('required')) {
+        <mat-error>You must make a selection</mat-error>
+        }
+        @if (selected.hasError('pattern') && !selected.hasError('required')) {
+        <mat-error>Your selection is invalid</mat-error>
+        }
+    </mat-form-field>
+</div> -->
 
 <div class="px-10 pt-4 pb-10">
     <div class="flex justify-end items-center gap-4 mb-4">
-        <button class="rounded-md py-2 px-3 border border-black hover:shadow-md cursor-pointer transition-all duration-300"
-        [ngClass]="store.filter.order() === 'asc' ? 'bg-black text-white' : 'bg-white text-black'"
-        (click)="store.updateSortOrder('asc')">ascending </button>
-        <button class="rounded-md py-2 px-3 border border-black hover:shadow-md cursor-pointer transition-all duration-300"
-        [ngClass]="store.filter.order() === 'desc' ? 'bg-black text-white' : 'bg-white text-black'"
-        (click)="store.updateSortOrder('desc')">descending  </button>
+        <button
+            class="rounded-md py-2 px-3 border border-black hover:shadow-md cursor-pointer transition-all duration-300"
+            [ngClass]="store.filter.order() === 'asc' ? 'bg-black text-white' : 'bg-white text-black'"
+            (click)="store.updateSortOrder('asc')">ascending </button>
+        <button
+            class="rounded-md py-2 px-3 border border-black hover:shadow-md cursor-pointer transition-all duration-300"
+            [ngClass]="store.filter.order() === 'desc' ? 'bg-black text-white' : 'bg-white text-black'"
+            (click)="store.updateSortOrder('desc')">descending </button>
     </div>
     <div class="grid grid-cols-3 gap-8 w-full">
         @for (item of store.sortProducts(); track $index) {
-        <div 
-            class="col-span-1 flex flex-col items-center bg-white shadow-lg border border-gray-500 rounded-lg 
+        <div class="col-span-1 flex flex-col items-center bg-white shadow-lg border border-gray-500 rounded-lg 
              md:flex-row md:max-w-xl ">
             <img class="object-cover w-full rounded-t-lg h-full md:w-48 md:rounded-none md:rounded-s-lg"
                 [src]="getTheExtractedImage(item)" alt="">
