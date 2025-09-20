@@ -8,11 +8,10 @@ import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'product-header',
-  standalone: true,
-  imports: [CommonModule, RouterModule],
-  templateUrl: './product-header.component.html',
-  styleUrl: './product-header.component.css'
+    selector: 'product-header',
+    imports: [CommonModule, RouterModule],
+    templateUrl: './product-header.component.html',
+    styleUrl: './product-header.component.css'
 })
 export class ProductHeaderComponent implements OnInit {
 

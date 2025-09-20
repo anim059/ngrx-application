@@ -8,9 +8,10 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-book-page',
-  templateUrl: './book-page.component.html',
-  styleUrls: ['./book-page.component.css']
+    selector: 'app-book-page',
+    templateUrl: './book-page.component.html',
+    styleUrls: ['./book-page.component.css'],
+    standalone: false
 })
 export class BookPageComponent {
 

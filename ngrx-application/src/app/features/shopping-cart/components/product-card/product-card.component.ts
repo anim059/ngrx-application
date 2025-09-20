@@ -9,11 +9,10 @@ import { MatIcon } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'product-card',
-  standalone: true,
-  imports: [MatIcon, FormsModule],
-  templateUrl: './product-card.component.html',
-  styleUrl: './product-card.component.css'
+    selector: 'product-card',
+    imports: [MatIcon, FormsModule],
+    templateUrl: './product-card.component.html',
+    styleUrl: './product-card.component.css'
 })
 export class ProductCardComponent implements OnChanges {
 

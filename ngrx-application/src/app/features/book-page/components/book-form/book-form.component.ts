@@ -4,9 +4,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IBook } from 'src/app/features/book-page/models/book-model';
 
 @Component({
-  selector: 'book-form',
-  templateUrl: './book-form.component.html',
-  styleUrl: './book-form.component.css'
+    selector: 'book-form',
+    templateUrl: './book-form.component.html',
+    styleUrl: './book-form.component.css',
+    standalone: false
 })
 export class BookFormComponent implements OnChanges{
 

@@ -4,11 +4,10 @@ import { ProductHeaderComponent } from '../product-header/product-header.compone
 import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-product-main-page',
-  standalone: true,
-  imports: [CommonModule, ProductHeaderComponent, RouterModule],
-  templateUrl: './product-main-page.component.html',
-  styleUrl: './product-main-page.component.css'
+    selector: 'app-product-main-page',
+    imports: [CommonModule, ProductHeaderComponent, RouterModule],
+    templateUrl: './product-main-page.component.html',
+    styleUrl: './product-main-page.component.css'
 })
 export class ProductMainPageComponent {
 

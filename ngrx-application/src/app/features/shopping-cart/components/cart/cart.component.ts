@@ -10,11 +10,10 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+    selector: 'app-cart',
+    imports: [CommonModule],
+    templateUrl: './cart.component.html',
+    styleUrl: './cart.component.css'
 })
 export class CartComponent implements OnInit {
 

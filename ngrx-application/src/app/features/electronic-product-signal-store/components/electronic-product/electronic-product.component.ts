@@ -9,12 +9,11 @@ import { MatIconModule } from '@angular/material/icon';
 import {MatSelectModule} from '@angular/material/select';
 
 @Component({
-  selector: 'app-electronic-product',
-  standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, MatSelectModule, MatIconModule],
-  templateUrl: './electronic-product.component.html',
-  styleUrl: './electronic-product.component.css',
-  providers: [BookElectronicProductStore]
+    selector: 'app-electronic-product',
+    imports: [ReactiveFormsModule, CommonModule, MatSelectModule, MatIconModule],
+    templateUrl: './electronic-product.component.html',
+    styleUrl: './electronic-product.component.css',
+    providers: [BookElectronicProductStore]
 })
 export class ElectronicProductComponent implements OnInit {
 

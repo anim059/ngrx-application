@@ -11,11 +11,10 @@ import { ProductCardComponent } from '../product-card/product-card.component';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'app-product-list',
-  standalone: true,
-  imports: [ProductCardComponent, CommonModule],
-  templateUrl: './product-list.component.html',
-  styleUrl: './product-list.component.css'
+    selector: 'app-product-list',
+    imports: [ProductCardComponent, CommonModule],
+    templateUrl: './product-list.component.html',
+    styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
 

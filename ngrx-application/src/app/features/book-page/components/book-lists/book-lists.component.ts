@@ -3,9 +3,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IBook } from 'src/app/features/book-page/models/book-model';
 
 @Component({
-  selector: 'book-lists',
-  templateUrl: './book-lists.component.html',
-  styleUrls: ['./book-lists.component.css']
+    selector: 'book-lists',
+    templateUrl: './book-lists.component.html',
+    styleUrls: ['./book-lists.component.css'],
+    standalone: false
 })
 export class BookListsComponent {
 
